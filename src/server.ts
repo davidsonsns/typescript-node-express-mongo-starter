@@ -1,9 +1,12 @@
-import express from 'express';
+import express from 'express'
 
-const server = express();
+console.log('TCL: express', express)
+
+const server = express()
 
 server.get('/', (req, res) => {
-  res.send('Hello ts-node!');
-});
+  res.send('Hello ts-node!')
+})
 
-export default server;
+
+export default server
