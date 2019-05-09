@@ -1,7 +1,9 @@
-import server from './server';
+import app from './app'
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000
 
-server.listen(port, () => {
-  console.log(`[SERVER] Running at port ${port}`);
-});
+app.listen(port, () => {
+  if (process.env.NODE_ENV !== 'production') {
+    console.log(`[SERVER] Running at port ${port}`)
+  }
+})
