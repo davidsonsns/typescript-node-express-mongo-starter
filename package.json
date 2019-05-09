@@ -11,11 +11,15 @@
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.16.4"
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.6"
   },
   "devDependencies": {
     "@types/cors": "^2.8.5",
     "@types/express": "^4.16.1",
+    "@types/mongoose": "^5.5.0",
+    "@types/node": "^12.0.0",
     "nodemon": "^1.19.0",
     "prettier": "^1.17.0",
     "ts-node": "^8.1.0",

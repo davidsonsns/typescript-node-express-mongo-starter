@@ -11,7 +11,8 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "@controllers/*": ["src/controllers/*"]
+      "@controllers/*": ["src/controllers/*"],
+      "@schemas/*": ["src/schemas/*"]
     }
   },
   "include": ["./src/**/*.ts"],

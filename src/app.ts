@@ -1,5 +1,6 @@
 import cors from 'cors'
 import express from 'express'
+import mongoose from 'mongoose'
 
 import routes from './routes'
 
@@ -9,6 +10,7 @@ class App {
   constructor() {
     this.express = express()
 
+    this.database()
     this.middlewares()
     this.routes()
   }
@@ -18,7 +20,10 @@ class App {
     this.express.use(cors())
   }
 
-  private database() { }
+  private database() {
+    const uri: string = process.env.MONGODB_URI as string
+    mongoose.connect(uri, { useNewUrlParser: true })
+  }
 
   private routes() {
     this.express.use(routes)

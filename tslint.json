@@ -6,7 +6,7 @@
     "indent": [true, "spaces"],
     "jsdoc-format": true,
     "no-consecutive-blank-lines": true,
-    "no-implicit-dependencies": [true, "dev", ["@controllers"]],
+    "no-implicit-dependencies": [true, "dev", ["@controllers", "@schemas"]],
     "no-internal-module": true,
     "no-null-keyword": true,
     "no-trailing-whitespace": true,
