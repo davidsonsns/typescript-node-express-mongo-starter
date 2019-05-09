@@ -11,13 +11,30 @@ class App {
     this.express = express()
 
     this.database()
-    this.middlewares()
+    this.preMiddlewares()
     this.routes()
+    this.posMiddlewares()
   }
 
-  private middlewares(): void {
+  // middlewares running before routes
+  private preMiddlewares(): void {
     this.express.use(express.json())
     this.express.use(cors())
+  }
+
+  // middlewares running after routes
+  private posMiddlewares(): void {
+    this.express.use((err: any, req: any, res: any, next: any) => {
+      if (!err.status) {
+        err.status = 500
+      }
+
+      res.status(err.status).json({ message: err.message })
+    })
+
+    this.express.use((req: any, res: any) => {
+      res.status(200).json(res.data || {})
+    })
   }
 
   private database() {
