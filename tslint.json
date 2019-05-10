@@ -6,7 +6,11 @@
     "indent": [true, "spaces"],
     "jsdoc-format": true,
     "no-consecutive-blank-lines": true,
-    "no-implicit-dependencies": [true, "dev", ["@ctrls", "@schemas"]],
+    "no-implicit-dependencies": [
+      true,
+      "dev",
+      ["@ctrls", "@schemas", "@config"]
+    ],
     "no-internal-module": true,
     "no-null-keyword": true,
     "no-submodule-imports": false,

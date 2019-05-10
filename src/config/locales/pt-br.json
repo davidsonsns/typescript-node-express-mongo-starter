@@ -1,0 +1,8 @@
+{
+  "emailRequiredField": "'email' é um campo obrigatório.",
+  "emailIsEmail": "This is not a valid email address.",
+  "passwordRequiredField": "'password' is a required field.",
+
+  "loginSuccessful": "You've successfully logged in.",
+  "emailSent": "Your password recovery email was sent."
+}

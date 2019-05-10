@@ -15,7 +15,8 @@
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "express-locale": "^1.2.0",
-    "mongoose": "^5.5.6"
+    "mongoose": "^5.5.6",
+    "node-polyglot": "^2.3.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.5",

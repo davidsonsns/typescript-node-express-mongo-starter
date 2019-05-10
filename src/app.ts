@@ -4,6 +4,7 @@ import express from 'express'
 import createLocaleMiddleware from 'express-locale'
 import mongoose from 'mongoose'
 
+import polyglot from '@config/polyglot'
 import routes from './routes'
 
 class App {
@@ -22,8 +23,17 @@ class App {
   private preMiddlewares(): void {
     this.express.use(express.json())
     this.express.use(cors())
-    this.express.use(createLocaleMiddleware())
+    this.express.use(createLocaleMiddleware({
+      default: 'en_US',
+      priority: ['accept-language', 'default']
+    }))
     this.express.use(bodyParser.json())
+
+    this.express.use((req: any, res: any, next: any) => {
+      req.polyglot = polyglot(req.locale.language)
+
+      next()
+    })
   }
 
   // middlewares running after routes
@@ -37,7 +47,7 @@ class App {
     })
 
     this.express.use((req: any, res: any) => {
-      res.status(200).json(res.data || {})
+      res.status(200).json(res.response || {})
     })
   }
 

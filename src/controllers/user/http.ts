@@ -10,12 +10,16 @@ interface IRes extends Response {
   [key: string]: any
 }
 
+interface IReq extends Response {
+  [key: string]: any
+}
+
 const http: IHttp = {}
 
-http.get = async (req: Request, res: IRes) => {
+http.get = async (req: IReq, res: IRes) => {
   const users = await UserCtrl.model.find().lean()
 
-  res.data = users
+  res.response = { users, message: req.polyglot.t('testes') }
 }
 
 http.post = async (req: Request, res: IRes) => {
