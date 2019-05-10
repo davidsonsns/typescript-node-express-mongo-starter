@@ -3,8 +3,8 @@
     "esModuleInterop": true,
     "removeComments": true,
     "module": "commonjs",
-    "noImplicitAny": false,
     "outDir": "dist",
+    "noImplicitAny": true,
     "sourceMap": true,
     "strict": true,
     "target": "es5",
@@ -14,7 +14,8 @@
       "@ctrls/*": ["src/controllers/*"],
       "@schemas/*": ["src/schemas/*"]
     },
+    "typeRoots": ["./src/@types", "./node_modules/@types"]
   },
   "include": ["./src/**/*.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["node_modules", "**/*.spec.ts", "typings"]
 }
