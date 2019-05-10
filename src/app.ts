@@ -1,5 +1,7 @@
+import bodyParser from 'body-parser'
 import cors from 'cors'
 import express from 'express'
+import createLocaleMiddleware from 'express-locale'
 import mongoose from 'mongoose'
 
 import routes from './routes'
@@ -20,6 +22,8 @@ class App {
   private preMiddlewares(): void {
     this.express.use(express.json())
     this.express.use(cors())
+    this.express.use(createLocaleMiddleware())
+    this.express.use(bodyParser.json())
   }
 
   // middlewares running after routes
