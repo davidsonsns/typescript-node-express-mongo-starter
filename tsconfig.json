@@ -10,11 +10,11 @@
     "target": "es5",
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "paths": {
-      "@ctrls/*": ["src/controllers/*"],
-      "@schemas/*": ["src/schemas/*"],
-      "@config/*": ["src/config/*"]
+      "@ctrls/*": ["controllers/*"],
+      "@schemas/*": ["schemas/*"],
+      "@config/*": ["config/*"]
     },
     "typeRoots": ["./src/@types", "./node_modules/@types"]
   },
