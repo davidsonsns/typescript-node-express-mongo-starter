@@ -1,6 +1,6 @@
-import en from './en.json'
-import ptBr from './pt-br.json'
+import enUS from './en_US.json'
+import ptBR from './pt_BR.json'
 
-const locales: any = { en, 'pt-br': ptBr }
+const locales: any = { 'en_US': enUS, 'pt_BR': ptBR }
 
 export default locales
