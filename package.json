@@ -1,16 +1,18 @@
 {
+  "name": "typescript-node-express-mongo-starter",
   "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "Davidson Nascimento <davidsonsns@gmail.com> (https://github.com/davidsonsns)",
+  "main": "index.js",
   "scripts": {
+    "lint": "tslint 'src/**/*.{ts,tsx}'",
+    "prod": "yarn build && node dist/start.js",
     "start": "ts-node -r tsconfig-paths/register -r dotenv/config ./src/start.ts dotenv_config_path=.env.development",
     "start:dev": "nodemon",
-    "prod": "yarn build && node dist/start.js",
     "prestart:prod": "rm -rf dist && tsc",
-    "start:prod": "node -r ./tsconfig-paths-bootstrap.js -r dotenv/config dist/start.js dotenv_config_path=.env.production",
-    "lint": "tslint 'src/**/*.{ts,tsx}'"
+    "start:prod": "node -r ./tsconfig-paths-bootstrap.js -r dotenv/config dist/start.js dotenv_config_path=.env.production"
   },
-  "name": "ts-express-mongoose",
-  "main": "index.js",
-  "license": "MIT",
   "dependencies": {
     "@types/yup": "^0.26.13",
     "body-parser": "^1.19.0",
