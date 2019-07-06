@@ -7,11 +7,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "tslint 'src/**/*.{ts,tsx}'",
-    "prod": "yarn build && node dist/start.js",
-    "start": "ts-node -r tsconfig-paths/register -r dotenv/config ./src/start.ts dotenv_config_path=.env.development",
-    "start:dev": "nodemon",
-    "prestart:prod": "rm -rf dist && tsc",
-    "start:prod": "node -r ./tsconfig-paths-bootstrap.js -r dotenv/config dist/start.js dotenv_config_path=.env.production"
+    "build:prod": "node -r ./tsconfig-paths-bootstrap.js -r dotenv/config dist/start.js dotenv_config_path=.env.production",
+    "start": "nodemon",
+    "prebuild:prod": "rm -rf dist && tsc"
   },
   "dependencies": {
     "@types/yup": "^0.26.13",
